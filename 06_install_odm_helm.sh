@@ -27,6 +27,7 @@ echo "#### Install ibm-helm/ibm-odm-dev"
 helm install my-odm-dev-release \
  --set license=accept \
  --set usersPassword=my-password \
+ --set decisionCenter.customlibPvc=Gerard.jar
  ibm-charts/ibm-odm-dev
 
 echo "#### Get status"
