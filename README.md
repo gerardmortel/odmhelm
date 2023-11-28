@@ -2,7 +2,8 @@
 [https://github.com/gerardmortel/odmhelm](https://github.com/gerardmortel/odmhelm)
 
 # Resources used to create this
-[https://www.ibm.com/docs/en/odm/8.12.0?topic=production-installing-helm-release-odm](Installing a Helm release of ODM for production)
+[Installing a Helm release of ODM for production](https://www.ibm.com/docs/en/odm/8.12.0?topic=production-installing-helm-release-odm)
+[Installing Helm](https://helm.sh/docs/intro/install/)
 
 # Purpose
 The purpose of this repo is to install IBM Operational Decision Manager via helm.
