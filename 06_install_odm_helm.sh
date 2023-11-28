@@ -13,12 +13,54 @@ echo "#### Install odm helm"
 #      ibm-helm/ibm-odm-prod
 # helm list
 
-# Dev install
-helm repo add ibm-charts https://raw.githubusercontent.com/IBM/charts/master/repo/stable/
+# Dev install v2
+echo "#### Add ibm-helm repo"
+helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
+
+echo "#### Update helm repo"
 helm repo update
+
+echo "#### Search repo for ibm-odm-dev"
 helm search repo ibm-odm-dev
+
+echo "#### Install ibm-helm/ibm-odm-dev"
 helm install my-odm-dev-release \
  --set license=accept \
  --set usersPassword=my-password \
- ibm-helm/ibm-odm-dev
+ ibm-charts/ibm-odm-dev
+
+echo "#### Get status"
+helm status my-odm-dev-release
+
+echo "#### Get values"
+helm get values my-odm-dev-release
+
+echo "#### Get hooks"
+helm get hooks my-odm-dev-release
+
+echo "#### List helm"
 helm list
+
+export ROUTE=$(oc get routes my-odm-dev-release-route -o jsonpath='{.spec.host}')
+
+echo "####  -- Decision Center Business Console"
+echo http://$ROUTE/decisioncenter
+
+echo "####  -- Decision Server Console"
+echo http://$ROUTE/res
+
+echo "####  -- Decision Server Runtime"
+echo http://$ROUTE/DecisionService
+
+echo "####  -- Decision Runner"
+echo http://$ROUTE/DecisionRunner
+
+# Dev install v2
+# helm repo add ibm-charts https://raw.githubusercontent.com/IBM/charts/master/repo/stable/
+# helm repo update
+# helm search repo ibm-odm-dev
+# helm install my-odm-dev-release \
+#  --set license=accept \
+#  --set usersPassword=my-password \
+#  ibm-charts/ibm-odm-dev
+# helm list
