@@ -3,6 +3,7 @@
 
 # Resources used to create this
 [Installing a Helm release of ODM for production](https://www.ibm.com/docs/en/odm/8.12.0?topic=production-installing-helm-release-odm)
+
 [Installing Helm](https://helm.sh/docs/intro/install/)
 
 # Purpose
