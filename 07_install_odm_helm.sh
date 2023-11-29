@@ -39,13 +39,14 @@ EOF
       --set internalDatabase.secretCredentials=my-odm-db-secret \
       --set internalDatabase.persistence.storageClassName=${STORAGECLASSNAME} \
       --set decisionCenter.customlibPvc=my-custom-dc-libs-pvc \
+      --set customization.runAsUser=1000680000 \
       ibm-helm/ibm-odm-prod
 
-  echo "#### Copy custom jar to Decision Center"
-  pod=`(oc get pods | grep ${RELEASENAME} | awk '{print $1}')`
-  oc cp Gerard.jar $pod:/config/customlib
-  oc exec $pod -- ls -l /config/customlib
-  oc delete pod $pod
+  # echo "#### Copy custom jar to Decision Center"
+  # pod=`(oc get pods | grep ${RELEASENAME} | awk '{print $1}')`
+  # oc cp Gerard.jar $pod:/config/customlib
+  # oc exec $pod -- ls -l /config/customlib
+  # oc delete pod $pod
 
   echo "#### End Prod Install"
 
