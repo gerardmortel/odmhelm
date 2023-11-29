@@ -8,3 +8,6 @@ export API_KEY_GENERATED=""
 
 # Lower priority variables
 export DOCKER_EMAIL="" # docker email addresses
+export USERSPASSWORD="" # To login to Decision Center
+export DBUSERNAME="" # Database user name
+export DBPASSWORD="" # Database password
