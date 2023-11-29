@@ -31,15 +31,16 @@ EOF
 
   echo "#### Install ibm-helm/ibm-odm-${INSTALLTYPE}"
   helm install ${RELEASENAME} \
-      --set license=true \
-      --set image.repository=cp.icr.io/cp/cp4a/odm \
-      --set usersPassword=${USERSPASSWORD} \
-      --set internalDatabase.persistence.enabled=true \
-      --set internalDatabase.persistence.useDynamicProvisioning=true \
-      --set internalDatabase.secretCredentials=my-odm-db-secret \
-      --set internalDatabase.persistence.storageClassName=${STORAGECLASSNAME} \
-      --set decisionCenter.customlibPvc=my-custom-dc-libs-pvc \
-      --set customization.runAsUser=1000690000 \
+      # --set license=true \
+      # --set image.repository=cp.icr.io/cp/cp4a/odm \
+      # --set usersPassword=${USERSPASSWORD} \
+      # --set internalDatabase.persistence.enabled=true \
+      # --set internalDatabase.persistence.useDynamicProvisioning=true \
+      # --set internalDatabase.secretCredentials=my-odm-db-secret \
+      # --set internalDatabase.persistence.storageClassName=${STORAGECLASSNAME} \
+      # --set decisionCenter.customlibPvc=my-custom-dc-libs-pvc \
+      # --set customization.runAsUser=1000690000 \
+      --values values.yaml \
       ibm-helm/ibm-odm-prod
 
   # echo "#### Copy custom jar to Decision Center"
