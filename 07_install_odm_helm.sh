@@ -40,8 +40,8 @@ EOF
       # --set internalDatabase.persistence.storageClassName=${STORAGECLASSNAME} \
       # --set decisionCenter.customlibPvc=my-custom-dc-libs-pvc \
       # --set customization.runAsUser=1000690000 \
-      --values values.yaml \
-      ibm-helm/ibm-odm-prod
+      ibm-helm/ibm-odm-prod \
+      --values values.yaml
 
   # echo "#### Copy custom jar to Decision Center"
   # pod=`(oc get pods | grep ${RELEASENAME} | awk '{print $1}')`
