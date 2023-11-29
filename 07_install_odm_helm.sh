@@ -36,7 +36,7 @@ helm install my-odm-prod-release \
     --set internalDatabase.persistence.enabled=true \
     --set internalDatabase.persistence.useDynamicProvisioning=true \
     --set internalDatabase.secretCredentials=my-odm-db-secret \
-    --set internalDatabase.persistence.storageClassName=nfs-managed-storage
+    --set internalDatabase.persistence.storageClassName=nfs-managed-storage \
     --set decisionCenter.customlibPvc=my-custom-dc-libs-pvc \
     ibm-helm/ibm-odm-prod
 
