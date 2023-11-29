@@ -27,7 +27,7 @@ if [ $INSTALLTYPE == "prod" ]; then
         storage: 1Gi
     storageClassName: ${STORAGECLASSNAME}
     volumeMode: Filesystem
-  EOF
+EOF
 
   echo "#### Install ibm-helm/ibm-odm-${INSTALLTYPE}"
   helm install ${RELEASENAME} \
