@@ -39,7 +39,7 @@ EOF
       --set internalDatabase.secretCredentials=my-odm-db-secret \
       --set internalDatabase.persistence.storageClassName=${STORAGECLASSNAME} \
       --set decisionCenter.customlibPvc=my-custom-dc-libs-pvc \
-      --set customization.runAsUser=1000680000 \
+      --set customization.runAsUser=1000690000 \
       ibm-helm/ibm-odm-prod
 
   # echo "#### Copy custom jar to Decision Center"
