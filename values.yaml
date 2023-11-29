@@ -129,7 +129,7 @@ decisionCenter:
   tagOrDigest:
   persistenceLocale: en_US
   replicaCount: 1
-  customlibPvc:
+  customlibPvc: my-custom-dc-libs-pvc
   loggingRef:
   jvmOptionsRef:
   webConfigRef:
