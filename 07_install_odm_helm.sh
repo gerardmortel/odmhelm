@@ -30,7 +30,7 @@ if [ $INSTALLTYPE == "prod" ]; then
 EOF
 
   echo "#### Install ibm-helm/ibm-odm-${INSTALLTYPE}"
-  helm install ${RELEASENAME} \
+  # helm install ${RELEASENAME} \
       # --set license=true \
       # --set image.repository=cp.icr.io/cp/cp4a/odm \
       # --set usersPassword=${USERSPASSWORD} \
@@ -40,14 +40,16 @@ EOF
       # --set internalDatabase.persistence.storageClassName=${STORAGECLASSNAME} \
       # --set decisionCenter.customlibPvc=my-custom-dc-libs-pvc \
       # --set customization.runAsUser=1000690000 \
-      ibm-helm/ibm-odm-prod \
-      --values values.yaml
+      # ibm-helm/ibm-odm-prod \
+      # --values values.yaml
 
-  # echo "#### Copy custom jar to Decision Center"
-  # pod=`(oc get pods | grep ${RELEASENAME} | awk '{print $1}')`
-  # oc cp Gerard.jar $pod:/config/customlib
-  # oc exec $pod -- ls -l /config/customlib
-  # oc delete pod $pod
+helm install odm1 ibm-helm/ibm-odm-prod --values values.yaml
+
+  echo "#### Copy custom jar to Decision Center"
+  pod=`(oc get pods | grep ${RELEASENAME} | awk '{print $1}')`
+  oc cp Gerard.jar $pod:/config/customlib
+  oc exec $pod -- ls -l /config/customlib
+  oc delete pod $pod
 
   echo "#### End Prod Install"
 
