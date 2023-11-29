@@ -33,7 +33,10 @@ helm install my-odm-prod-release \
     --set license=true \
     --set image.repository=cp.icr.io/cp/cp4a/odm \
     --set usersPassword=${USERSPASSWORD} \
+    --set internalDatabase.persistence.enabled=true \
+    --set internalDatabase.persistence.useDynamicProvisioning=true \
     --set internalDatabase.secretCredentials=my-odm-db-secret \
+    --set internalDatabase.persistence.storageClassName=nfs-managed-storage
     --set decisionCenter.customlibPvc=my-custom-dc-libs-pvc \
     ibm-helm/ibm-odm-prod
 
