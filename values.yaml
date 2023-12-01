@@ -11,7 +11,7 @@ usersPassword: "odmpwd"
 
 image:
   repository: "cp.icr.io/cp/cp4a/odm"
-  tag: 8.12.0.0-IF006
+  tag: 8.12.0.0-IF007
   pullPolicy: IfNotPresent
 ## Optionally specify an list of imagePullSecrets.
 ## Secrets must be manually created in the namespace.
