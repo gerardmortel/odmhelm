@@ -13,4 +13,5 @@ export DBUSERNAME="" # Database user name
 export DBPASSWORD="" # Database password
 export STORAGECLASSNAME="" # nfs-managed-storage for Fyre
 export INSTALLTYPE="" # dev or prod
+export NS="odm${INSTALLTYPE}helm"
 export RELEASENAME="" # my-odm-dev-release or my-odm-prod-release
