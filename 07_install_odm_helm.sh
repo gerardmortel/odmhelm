@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "#### Install odm helm"
+echo "#### Running install ODM via helm script"
+
+echo "#### Change to ${NS}"
+oc project ${NS}
 
 echo "#### Add ibm-helm repo"
 helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
@@ -92,13 +95,3 @@ echo http://$ROUTE/DecisionService
 
 echo "####  -- Decision Runner"
 echo http://$ROUTE/DecisionRunner
-
-# Dev install v2
-# helm repo add ibm-charts https://raw.githubusercontent.com/IBM/charts/master/repo/stable/
-# helm repo update
-# helm search repo ibm-odm-dev
-# helm install my-odm-dev-release \
-#  --set license=accept \
-#  --set usersPassword=my-password \
-#  ibm-charts/ibm-odm-dev
-# helm list

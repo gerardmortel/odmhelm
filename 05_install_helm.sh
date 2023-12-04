@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "#### Running install helm executable script"
+
 # From https://helm.sh/docs/intro/install/
 echo "#### Download and install helm"
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3

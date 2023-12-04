@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "#### Set up the environment variables"
+echo "#### Running set up the environment variables script"
 # Higher priority variables
 export NS="odmdevhelm"
 ### Get entitlement key from https://myibm.ibm.com/products-services/containerlibrary
