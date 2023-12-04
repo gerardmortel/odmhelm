@@ -7,3 +7,4 @@ echo "#### Running the driver file"
 ./05_install_helm.sh
 ./06_create_my_odm_db_secret.sh
 ./07_install_odm_helm.sh
+./08_get_status.sh

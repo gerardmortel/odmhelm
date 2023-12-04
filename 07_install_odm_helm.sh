@@ -68,30 +68,3 @@ else
     
     echo "#### End Dev Install"
 fi
-
-echo "#### Get status"
-helm status ${RELEASENAME}
-
-echo "#### Get values"
-helm get values ${RELEASENAME}
-
-echo "#### Get hooks"
-helm get hooks ${RELEASENAME}
-
-echo "#### List helm"
-helm list
-
-echo "#### Get route name"
-export ROUTE=$(oc get routes ${RELEASENAME}-route -o jsonpath='{.spec.host}')
-
-echo "####  -- Decision Center Business Console"
-echo http://$ROUTE/decisioncenter
-
-echo "####  -- Decision Server Console"
-echo http://$ROUTE/res
-
-echo "####  -- Decision Server Runtime"
-echo http://$ROUTE/DecisionService
-
-echo "####  -- Decision Runner"
-echo http://$ROUTE/DecisionRunner
