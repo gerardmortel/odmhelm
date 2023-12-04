@@ -21,14 +21,14 @@ else
   export ROUTE=$(oc get routes ${RELEASENAME}-route -o jsonpath='{.spec.host}')
 fi
 
-echo "####  -- Decision Center Business Console" && echo ""
+echo "" && echo "####  -- Decision Center Business Console"
 echo https://$ROUTE/decisioncenter
 
-echo "####  -- Decision Server Console" && echo ""
+echo "" && echo "####  -- Decision Server Console"
 echo https://$ROUTE/res
 
-echo "####  -- Decision Server Runtime" && echo ""
+echo "" && echo "####  -- Decision Server Runtime"
 echo https://$ROUTE/DecisionService
 
-echo "####  -- Decision Runner" && echo ""
+echo "" && echo "####  -- Decision Runner"
 echo https://$ROUTE/DecisionRunner
