@@ -18,7 +18,7 @@ The purpose of this repo is to install IBM Operational Decision Manager via helm
 
 # Instructions
 1. ssh into the infrastructure node as root (e.g. ssh root@api.bravers.cp.fyre.ibm.com)
-2. yum install -y git unzip
+2. yum install -y unzip
 3. cd
 4. rm -rf odmhelm-main
 5. rm -f main.zip
