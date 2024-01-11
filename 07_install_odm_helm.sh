@@ -35,7 +35,7 @@ EOF
   echo "#### Install ibm-helm/ibm-odm-${INSTALLTYPE}"
   helm install ${RELEASENAME} \
       ibm-helm/ibm-odm-prod \
-      --values values.yaml
+      --values values2.yaml
 
       # --set license=true \
       # --set image.repository=cp.icr.io/cp/cp4a/odm \
